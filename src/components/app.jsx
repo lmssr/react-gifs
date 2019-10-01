@@ -11,12 +11,20 @@ class App extends Component {
   constructor(props) { // be promoted into a class
     super(props);
 
+    this.state = {
+      gifs: [],
+      selectedGifId: "xT9IgDEI1iZyb2wqo8"
+    };
+
   }
 
   render() {
     return (
+      <div>
+        <div className="left-scene">
+          <SearchBar searchFunction={this.search}/>
+        </div>
         <div>
-            <SearchBar searchFunction={this.search}/>
             <Gif id={this.state.selectedGifId} />
         </div>
     );
